@@ -1,0 +1,20 @@
+@import "bower_components/px-colors-design/_settings.colors.scss";
+
+body {
+	margin: 0;
+	font-family: Raleway, sans-serif;
+	background-color: $gray1;
+}
+
+.ge-header-color {
+	 background-color: $gray10 !important;
+}
+
+.ge-image-circle-color {
+	border-color: $yellow-dark !important;
+}
+
+paper-fab {
+  --paper-fab-background: $gray10;
+  --paper-fab-keyboard-focus-background: $gray8;
+}

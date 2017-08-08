@@ -1,0 +1,97 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. Fll rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/chart-elements/chart-line.html">
+<link rel="import" href="../../bower_components/chart-elements/chart-bar.html">
+
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+<dom-module id="analytics-screen">
+  <link rel="import" type="css" href="analytics-screen.css">
+  <link rel="import" type="css" href="../assets/style.css">
+
+  <template>
+
+    <!-- main panel -->
+    <app-header-layout>
+
+      <app-header class="ge-header-color" effects="resize-title" condenses fixed shadow slot="header">
+        <app-toolbar class="top-toolbar">
+          <slot name="drawer-toggle"></slot>
+          <div condensed-title></div>
+        </app-toolbar>
+        <app-toolbar class="bottom-toolbar">
+          <div main-title></div>
+        </app-toolbar>
+      </app-header>
+
+      <div class="layout horizontal">
+
+        <paper-card heading="Suggestions" animatedShadow="true">
+          <div class="card-content">
+            <paper-dropdown-menu label="Pin">
+              <paper-listbox slot="dropdown-content" selected="1">
+                <template is="dom-repeat" items="{{pins}}">
+                  <paper-item>{{item.name}}</paper-item>
+                </template>
+              </paper-listbox>
+            </paper-dropdown-menu>
+            <div class="suggestions">
+              <template is="dom-repeat" items="{{suggestions}}">
+                <div class="suggestion">
+                  <h4>SUGGESTION</h4>
+                  <p>{{item}}</p>
+                </div>
+              </template>
+            </div>
+          </div>
+        </paper-card>
+
+        <paper-card heading="Pedestrian Analytics" animatedShadow="true">
+          <div class="card-content">
+            <chart-line data="[[lineData]]"></chart-line>
+          </div>
+        </paper-card>
+
+        <paper-card heading="Hourly Pedestrian Analytics" animatedShadow="true">
+          <div class="card-content">
+            <chart-bar data="[[barData]]"></chart-bar>
+          </div>
+        </paper-card>
+
+        <paper-card heading="Vehicle Analytics" animatedShadow="true">
+          <div class="card-content">
+            <chart-line data="[[lineCarData]]"></chart-line>
+          </div>
+        </paper-card>
+      </div>
+
+    </app-header-layout>
+
+    <paper-fab on-tap="open" icon="icons:refresh"></paper-fab>
+
+  </template>
+
+  <script src="analytics-screen.js"></script>
+</dom-module>

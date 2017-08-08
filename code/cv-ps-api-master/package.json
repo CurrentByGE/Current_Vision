@@ -1,0 +1,16 @@
+{
+  "name": "cv-ps-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Krishnan Rajiyah",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "pg": "^7.0.2"
+  }
+}

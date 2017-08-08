@@ -1,0 +1,8 @@
+node_modules
+bower_components
+dist
+package-lock.json
+*.css
+*.map
+*.min*
+.DS_Store

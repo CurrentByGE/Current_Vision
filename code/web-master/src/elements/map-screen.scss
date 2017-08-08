@@ -1,0 +1,147 @@
+.googlemap {
+  height: 500px;
+  display: block;
+}
+
+.googlemap-container {
+  max-width: 60%;
+}
+
+paper-checkbox, iron-label {
+  margin-bottom: 10px !important;
+  display: block !important;
+}
+
+.card-content {
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+  padding-bottom: 35px !important;
+}
+
+.display-map-info {
+  float: right;
+  max-width: 40%;
+  margin-left: 65%;
+  display: inline-block;
+  padding: 200px 0 !important;
+}
+
+#controlsToggle {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+}
+
+.layout {
+  margin: auto;
+  width: 80%;
+  padding: 5%;
+}
+
+app-header {
+  color: #fff;
+}
+
+app-toolbar {
+  height: 120px;
+}
+
+[condensed-title] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('../assets/img/current.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90px;
+  /* The difference in font size is used to calculate the scale of the title in the transition. */
+  font-size: 16px;
+}
+
+[main-title] {
+  position: absolute;
+  top: -120px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('../assets/img/currentVision.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 500px;
+  -webkit-transform-origin: center top !important;
+  transform-origin: center top !important;
+  /* The difference in font size is used to calculate the scale of the title in the transition. */
+  font-size: 32px;
+}
+
+.content {
+  display: block;
+  position: relative;
+  max-width: 1000px;
+  margin: 5px auto;
+}
+
+.card-container {
+  display: inline-block;
+  width: 33.33%;
+  color: black;
+  text-decoration: none;
+}
+
+paper-card {
+  display: block;
+  margin-bottom: 15%;
+  --paper-card-header-image: {
+    height: 200px;
+  }
+}
+
+paper-card h2 {
+  margin: 4px;
+  font-weight: normal;
+}
+
+paper-card p {
+  margin: 4px;
+  color: #999;
+}
+
+paper-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  --paper-fab-background: #EF5458;
+  --paper-fab-keyboard-focus-background: #DF4448;
+}
+
+@media (max-width:960px) {
+  .content {
+    max-width: 800px;
+  }
+  .card-container {
+    width: 50%;
+  }
+}
+
+@media (max-width:719px) {
+  app-toolbar {
+    height: 60px;
+  }
+  [condensed-title] {
+    background-image: url('../assets/img/current.png');
+    background-size: 60px;
+  }
+  [main-title] {
+    top: -60px;
+    background-image: url('../assets/img/currentVision.png');
+    background-size: 90px;
+  }
+  .content {
+    max-width: 400px;
+  }
+  .card-container {
+    width: 100%;
+  }
+}

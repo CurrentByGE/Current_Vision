@@ -1,0 +1,18 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "author": "Krishnan Rajiyah <krishnan.rajiyah@ge.com>",
+  "description": "",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-clean": "^0.3.2",
+    "gulp-sass": "*",
+    "gulp-vulcanize": "^6.1.0",
+    "ncp": "^2.0.0",
+    "node-neat": "^1.7.2",
+    "remove-empty-directories": "0.0.1",
+    "run-sequence": "^1.2.2"
+  }
+}

@@ -1,0 +1,10 @@
+---
+applications:
+- name: cv-ps-api
+  buildpack: nodejs_buildpack
+  memory: 128M
+  command: node app.js
+  disk_quota: 128M
+  instances: 1
+  services:
+  - hackathon-db-team6

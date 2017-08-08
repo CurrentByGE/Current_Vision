@@ -1,0 +1,4 @@
+https://current-vision.run.aws-usw02-pr.ice.predix.io/
+
+Username: admin
+Password: password

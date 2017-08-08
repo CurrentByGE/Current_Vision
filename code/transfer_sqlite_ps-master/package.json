@@ -1,0 +1,20 @@
+{
+  "name": "transfer_sqlite_ps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.build.ge.com:pedestrian-app/transfer_sqlite_ps.git"
+  },
+  "author": "Krishnan Rajiyah",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.81.0",
+    "sqlite3": "^3.1.8"
+  }
+}

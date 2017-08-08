@@ -1,0 +1,153 @@
+@import "bower_components/px-colors-design/_settings.colors.scss";
+
+.suggestions {
+  display: inline-block;
+  margin-bottom: 20px !important;
+}
+
+.suggestion {
+  margin: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: 175px !important;
+  display: inline-block !important;
+  background-color: $gray1;
+}
+
+.suggestion > h4 {
+  font-weight: bold !important;
+  font-size: 24px !important;
+}
+
+.suggestion > p {
+  color: black !important;
+  font-size: 15px !important;
+}
+
+paper-dropdown-menu {
+  display: block !important;
+  width: 20%;
+  margin-bottom: 30px !important;
+}
+
+chart-line, chart-bar {
+  display: block !important;
+  height: 350px !important;
+  width: auto !important;
+  margin-bottom: 150px !important;
+}
+
+.layout {
+  margin: auto;
+  width: 80%;
+  padding: 5%;
+}
+
+.card-content {
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+  padding-bottom: 35px !important;
+}
+
+app-header {
+  color: #fff;
+}
+
+app-toolbar {
+  height: 120px;
+}
+
+[condensed-title] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('../assets/img/current.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90px;
+  /* The difference in font size is used to calculate the scale of the title in the transition. */
+  font-size: 16px;
+}
+
+[main-title] {
+  position: absolute;
+  top: -120px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('../assets/img/currentVision.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 500px;
+  -webkit-transform-origin: center top !important;
+  transform-origin: center top !important;
+  /* The difference in font size is used to calculate the scale of the title in the transition. */
+  font-size: 32px;
+}
+
+.content {
+  display: block;
+  position: relative;
+  max-width: 1000px;
+  margin: 5px auto;
+}
+
+paper-card {
+  display: block;
+  margin-bottom: 30px;
+  padding: 15px !important;
+  --paper-card-header-image: {
+    height: 200px;
+  }
+}
+
+paper-card h2 {
+  margin: 4px;
+  font-weight: normal;
+}
+
+paper-card p {
+  margin: 4px;
+  color: #999;
+}
+
+paper-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  --paper-fab-background: #EF5458;
+  --paper-fab-keyboard-focus-background: #DF4448;
+}
+
+@media (max-width:960px) {
+  .content {
+    max-width: 800px;
+  }
+  .card-container {
+    width: 50%;
+  }
+}
+
+@media (max-width:719px) {
+  app-toolbar {
+    height: 60px;
+  }
+  [condensed-title] {
+    background-image: url('../assets/img/current.png');
+    background-size: 60px;
+  }
+  [main-title] {
+    top: -60px;
+    background-image: url('../assets/img/currentVision.png');
+    background-size: 90px;
+  }
+  .content {
+    max-width: 400px;
+  }
+  .card-container {
+    width: 100%;
+  }
+}

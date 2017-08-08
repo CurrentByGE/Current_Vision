@@ -1,0 +1,38 @@
+sensors:
+- locationuid
+- lat
+- long
+
+pedestrians:
+- locationuid
+- lat
+- long
+- pcount
+- speed
+- direction
+- timestamp
+- result
+- date
+
+vehicles:
+- locationuid
+- lat
+- long
+- vcount
+- speed
+- direction
+- timestamp
+- result
+- date
+
+
+pins:
+- pinid
+- bid
+- name
+- lat
+- long
+
+businesses:
+- bid
+- name

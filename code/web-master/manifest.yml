@@ -1,0 +1,7 @@
+---
+  name: current-vision
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+  memory: 128M
+  path: dist
+  disk_quota: 128M
+  instances: 2

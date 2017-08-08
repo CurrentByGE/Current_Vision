@@ -1,0 +1,114 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+
+<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="login-app.html">
+<link rel="import" href="analytics-screen.html">
+<link rel="import" href="map-screen.html">
+<link rel="import" href="app-icons.html">
+
+<dom-module id="main-app">
+  <link rel="import" type="css" href="main-app.css">
+  <link rel="import" type="css" href="../assets/style.css">
+
+  <template>
+
+    <template is="dom-if" if="{{!auth}}">
+      <login-app></login-app>
+    </template>
+
+    <template is="dom-if" if="{{auth}}">
+      <app-location route="{{_route}}" use-hash-as-path></app-location>
+      <app-route
+          route="{{_route}}"
+          pattern="/:page"
+          data="{{_pageData}}"
+          tail="{{_subRoute}}"></app-route>
+      <app-route
+          route="{{_subRoute}}"
+          pattern="/:id"
+          data="{{_idData}}"></app-route>
+
+      <app-drawer-layout responsive-width="1280px">
+
+        <!-- nav panel -->
+        <app-drawer id="drawer" swipe-open slot="drawer">
+          <app-header-layout has-scrolling-region>
+
+            <app-header fixed slot="header">
+              <div class="avatar-container ge-image-circle-color">
+                <div class="image"></div>
+              </div>
+              <div class="contact-info">
+                <div class="name">Current Vision</div>
+                <br>
+                <div class="email">Construct a Better Future</div>
+              </div>
+            </app-header>
+
+            <!-- nav menu -->
+            <!-- Two way binding to the selected property has been removed due to polymer/issues/4405 -->
+            <paper-listbox
+                selected="[[_pageData.page]]"
+                attr-for-selected="name"
+                on-iron-activate="_drawerSelected">
+              <paper-item name="map">
+                <a href="#/map" name="name">Map View</a>
+              </paper-item>
+              <paper-item name="analytics">
+                <a href="#/analytics" name="name">Pin Analytics</a>
+              </paper-item>
+              <paper-item>
+                <a class="pointer" on-tap="logout">Logout</a>
+              </paper-item>
+            </paper-listbox>
+          </app-header-layout>
+        </app-drawer>
+
+        <!-- list/detail pages -->
+        <iron-pages selected="[[_selectedPage]]" attr-for-selected="name">
+
+          <map-screen name="map">
+            <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+          </map-screen>
+
+          <analytics-screen name="analytics">
+            <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+          </analytics-screen>
+
+        </iron-pages>
+
+      </app-drawer-layout>
+
+    </template>
+
+  </template>
+
+  <script src="main-app.js"></script>
+
+</dom-module>
